@@ -1,0 +1,92 @@
+{
+  "data_path": "data\\StudentsPrepared.xlsx",
+  "target_mapping": {
+    "Desistente": 1,
+    "Graduado": 0,
+    "Matriculado": 0
+  },
+  "feature_groups": {
+    "categorical": [
+      "EstadoCivil",
+      "Curso",
+      "QualificacaoAnterior",
+      "Nacionalidade",
+      "Genero"
+    ],
+    "numeric": [
+      "QualificacaoAnteriorGrau",
+      "NotaAdmissao",
+      "UnidadesCurriculares1SemestreCreditado",
+      "UnidadesCurriculares1SemestreInscrito",
+      "UnidadesCurriculares1SemestreAvaliacoes",
+      "UnidadesCurriculares1SemestreAprovado",
+      "UnidadesCurriculares1SemestreGrau",
+      "UnidadesCurriculares1SemestreSemAvaliacoes",
+      "UnidadesCurriculares2SemestreCreditado",
+      "UnidadesCurriculares2SemestreInscrito",
+      "UnidadesCurriculares2SemestreAvaliacoes",
+      "UnidadesCurriculares2SemestreAprovado",
+      "UnidadesCurriculares2SemestreGrau",
+      "UnidadesCurriculares2SemestreSemAvaliacoes",
+      "TaxaDesemprego",
+      "TaxaInflacao",
+      "PIB"
+    ],
+    "boolean": [
+      "NecessidadesEspeciais",
+      "Devedor",
+      "MensalidadesEmDia",
+      "Bolsista",
+      "International"
+    ]
+  },
+  "test": {
+    "accuracy": 0.8700564971751412,
+    "precision": 0.7845117845117845,
+    "recall": 0.8204225352112676,
+    "f1": 0.802065404475043,
+    "roc_auc": 0.9264664526259051,
+    "confusion_matrix": [
+      [
+        537,
+        64
+      ],
+      [
+        51,
+        233
+      ]
+    ]
+  },
+  "cross_validation": {
+    "accuracy": {
+      "train_mean": 0.8737643862243484,
+      "train_std": 0.00504164542511915,
+      "validation_mean": 0.8482663278434381,
+      "validation_std": 0.013345197708957124
+    },
+    "precision": {
+      "train_mean": 0.7861105712599648,
+      "train_std": 0.012455233194221661,
+      "validation_mean": 0.7496377675077872,
+      "validation_std": 0.023280269693445238
+    },
+    "recall": {
+      "train_mean": 0.8344336851267545,
+      "train_std": 0.003928895985538488,
+      "validation_mean": 0.7933147847592549,
+      "validation_std": 0.025625988662754506
+    },
+    "f1": {
+      "train_mean": 0.8094799745132468,
+      "train_std": 0.005853515838883413,
+      "validation_mean": 0.7706013837708586,
+      "validation_std": 0.019860271249639315
+    },
+    "roc_auc": {
+      "train_mean": 0.9385305498880561,
+      "train_std": 0.0019084130141552467,
+      "validation_mean": 0.9079494031030085,
+      "validation_std": 0.010915177031829149
+    }
+  }
+}
