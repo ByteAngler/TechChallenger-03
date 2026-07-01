@@ -1,20 +1,25 @@
 from pathlib import Path
+import sys
 
 import joblib
 import pandas as pd
 import streamlit as st
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from src.data_processing import (
     BOOLEAN_COLUMNS,
     DATA_PATH,
-    GRADE_COLUMNS,
     TARGET_COLUMN,
     fix_grade_columns,
     load_data,
 )
 
 
-MODEL_PATH = Path("models/model.joblib")
+MODEL_PATH = PROJECT_ROOT / "models/model.joblib"
+REFERENCE_DATA_PATH = PROJECT_ROOT / DATA_PATH
 
 
 @st.cache_resource
@@ -24,7 +29,7 @@ def load_model():
 
 @st.cache_data
 def load_reference_data() -> pd.DataFrame:
-    df = load_data(DATA_PATH)
+    df = load_data(REFERENCE_DATA_PATH)
     return df.drop(columns=[TARGET_COLUMN])
 
 
@@ -66,7 +71,7 @@ def build_input_form(reference_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def main() -> None:
-    st.set_page_config(page_title="Predicao de Evasao", page_icon="🎓")
+    st.set_page_config(page_title="Predicao de Evasao")
     st.title("Predicao de evasao de estudantes")
 
     model = load_model()
